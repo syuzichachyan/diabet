@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react'
+import PropTypes from 'prop-types';
 import Recipe from '../recipe';
 import './style.css';
 
@@ -10,6 +11,17 @@ class Recipes extends Component {
         const { includes, excludes, getRecipes } = this.props;
         getRecipes(excludes, includes);
     }
+    static propTypes={
+        includes:PropTypes.array,
+        excludes:PropTypes.array,
+        getRecipes:PropTypes.func,
+        isRecipesFetching:PropTypes.bool,
+        recipes:PropTypes.object
+    };
+    static defaultProps={
+        isRecipesFetching:false
+    };
+
     render() {
         const { isRecipesFetching, recipes } = this.props;
         if (isRecipesFetching === false) {
@@ -30,3 +42,4 @@ class Recipes extends Component {
 }
 
 export default Recipes;
+
