@@ -1,7 +1,14 @@
-import {RECIPES_FETCHING_FAILURE,RECIPES_FETCHING_SUCCESS,RECIPES_FETCHING} from '../constants/actions';
+import {
+    RECIPES_FETCHING_FAILURE,
+    RECIPES_FETCHING_SUCCESS,
+    RECIPES_FETCHING
+} from '../constants/actions';
 
 const initialStateIsRecipesFetching = false;
-export const isRecipesFetching = (state = initialStateIsRecipesFetching, action) => {
+export const isRecipesFetching = (
+    state = initialStateIsRecipesFetching,
+    action
+) => {
     switch (action.type) {
         case RECIPES_FETCHING:
             return true;
@@ -9,18 +16,18 @@ export const isRecipesFetching = (state = initialStateIsRecipesFetching, action)
             return false;
         case RECIPES_FETCHING_FAILURE:
             return false;
-        default :
+        default:
             return state;
     }
 };
-const initialStateForRecipes=[];
+const initialStateForRecipes = [];
 export const recipes = (state = initialStateForRecipes, action) => {
     switch (action.type) {
         case RECIPES_FETCHING_SUCCESS:
             return action.payload;
         case RECIPES_FETCHING_FAILURE:
             return initialStateForRecipes;
-        default :
+        default:
             return state;
     }
 };
