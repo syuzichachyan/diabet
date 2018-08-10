@@ -27,7 +27,7 @@ export const getRecipes = (excludes, includes) => dispatch => {
             food => (exludecFoods = exludecFoods + `&excluded=${food}`)
         );
         fetch(
-            `https://api.edamam.com/search?q=${inclFoods}&app_id=28fb7256&app_key=b3bccf42eb282f3b21740bf3fa472af3&from=0&to=3&in` +
+            `https://api.edamam.com/search?q=${inclFoods}&app_id=28fb7256&app_key=b3bccf42eb282f3b21740bf3fa472af3&from=0&to=6&in` +
                 exludecFoods
         )
             .then(recipes => recipes.json())

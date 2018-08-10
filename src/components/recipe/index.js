@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './style.css';
 class Recipe extends Component {
     constructor(props) {
         super(props);
     }
-    static propTypes={
-        recipe:PropTypes.object.isRequired
+    static propTypes = {
+        recipe: PropTypes.object.isRequired
     };
     render() {
         const { recipe } = this.props;

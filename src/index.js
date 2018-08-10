@@ -1,18 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
-import thunk from 'redux-thunk';
-import {applyMiddleware, createStore} from 'redux';
-import rootReducer from './reducers';
-import Recipes from './containers/recipes';
-const store = createStore(rootReducer,{recipes:null,
-    isRecipesFetching:null}, applyMiddleware(thunk));
-store.subscribe(() => console.log(store.getState()));
-//for rehearsal
-const includes = ["fish"];
-const excludes = ["chicken"];
+import { Provider } from 'react-redux';
+import Main from './components/main';
+import store from './store/configureStore';
+
 ReactDOM.render(
     <Provider store={store}>
-        <Recipes includes={includes} excludes={excludes}/>
+        <Main />
     </Provider>,
-    document.getElementById('root'));
+    document.getElementById('root')
+);
