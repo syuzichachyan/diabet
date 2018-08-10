@@ -24,7 +24,7 @@ const initialStateForRecipes = [];
 export const recipes = (state = initialStateForRecipes, action) => {
     switch (action.type) {
         case RECIPES_FETCHING_SUCCESS:
-            return action.payload;
+            return [...state,action.payload];
         case RECIPES_FETCHING_FAILURE:
             return initialStateForRecipes;
         default:

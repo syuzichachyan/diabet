@@ -16,10 +16,11 @@ class Recipes extends Component {
         excludes: PropTypes.array,
         getRecipes: PropTypes.func,
         isRecipesFetching: PropTypes.bool,
-        recipes: PropTypes.object
+        recipes: PropTypes.array
     };
     static defaultProps = {
-        isRecipesFetching: false
+        isRecipesFetching: false,
+        recipes:[]
     };
 
     render() {
@@ -27,17 +28,17 @@ class Recipes extends Component {
         if (isRecipesFetching === false) {
             return (
                 <div className="recipes">
-                    {recipes.hits.map(recipe => {
+                    {recipes.map(item=>item.hits.map(recipe => {
                         return (
                             <Recipe
                                 recipe={recipe.recipe}
                                 key={recipe.recipe.url}
                             />
                         );
-                    })}
+                    }))}
                 </div>
             );
-        } else return <div>hjkh</div>;
+        } else return <div>loading</div>;
     }
 }
 
