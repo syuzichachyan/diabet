@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Recipe from '../recipe';
-import './style.css';
+import injectSheet from 'react-jss'
+import styles from './style';
 
 class Recipes extends Component {
     constructor(props) {
@@ -24,10 +25,10 @@ class Recipes extends Component {
     };
 
     render() {
-        const { isRecipesFetching, recipes } = this.props;
+        const { isRecipesFetching, recipes, classes } = this.props;
         if (isRecipesFetching === false) {
             return (
-                <div className="recipes">
+                <div className={classes.recipes}>
                     {recipes.map(item=>item.hits.map(recipe => {
                         return (
                             <Recipe
@@ -42,4 +43,4 @@ class Recipes extends Component {
     }
 }
 
-export default Recipes;
+export default injectSheet(styles)(Recipes);

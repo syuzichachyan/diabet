@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './style.css';
+import injectSheet from 'react-jss';
+import styles from './style';
 class Recipe extends Component {
     constructor(props) {
         super(props);
@@ -9,9 +10,9 @@ class Recipe extends Component {
         recipe: PropTypes.object.isRequired
     };
     render() {
-        const { recipe } = this.props;
+        const { recipe ,classes} = this.props;
         return (
-            <div className="recipe">
+            <div className={classes.recipe}>
                 <img src={recipe.image} />
                 <h3>{recipe.label}</h3>
             </div>
@@ -19,4 +20,4 @@ class Recipe extends Component {
     }
 }
 
-export default Recipe;
+export default injectSheet(styles)(Recipe);
