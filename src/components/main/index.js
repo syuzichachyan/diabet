@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Routers from '../../routes';
+
 class Main extends Component {
     render() {
         return (
@@ -9,4 +10,5 @@ class Main extends Component {
         );
     }
 }
+
 export default Main;

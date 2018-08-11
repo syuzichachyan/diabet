@@ -2,7 +2,7 @@ import {
     RECIPES_FETCHING,
     RECIPES_FETCHING_FAILURE,
     RECIPES_FETCHING_SUCCESS
-} from '../constants/actions';
+} from '../constants';
 
 export function recipesFetching() {
     return { type: RECIPES_FETCHING };

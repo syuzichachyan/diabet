@@ -1,7 +1,13 @@
 import { combineReducers } from 'redux';
-import { isRecipesFetching, recipes } from './recipes-reducer';
+import { isRecipesFetching, recipes } from './recipes';
+import preference from './preference';
+import noPreferences from './noPreferences';
+import indifference from './indifference';
 
 export default combineReducers({
     recipes,
-    isRecipesFetching
+    isRecipesFetching,
+    preference,
+    indifference,
+    noPreferences
 });

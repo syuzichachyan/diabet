@@ -3,12 +3,12 @@ import { Redirect, Route } from 'react-router-dom';
 
 class PrivateRoute extends Component {
     render() {
-        const { component: Component, isAuthenticated, ...rest } = this.props;
+        const { component: Component, isAuth, ...rest } = this.props;
         return (
             <Route
                 {...rest}
                 render={props =>
-                    isAuthenticated ? (
+                    isAuth ? (
                         <Component {...props} />
                     ) : (
                         <Redirect
